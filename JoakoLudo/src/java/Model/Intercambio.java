@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -12,11 +12,11 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
 
 /**
@@ -24,14 +24,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Pyther
  */
 @Entity
-@Table(name = "login")
+@Table(name = "intercambio")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Login.findAll", query = "SELECT l FROM Login l")
-    , @NamedQuery(name = "Login.findById", query = "SELECT l FROM Login l WHERE l.id = :id")
-    , @NamedQuery(name = "Login.findByUsuario", query = "SELECT l FROM Login l WHERE l.usuario = :usuario")
-    , @NamedQuery(name = "Login.findByContrasenia", query = "SELECT l FROM Login l WHERE l.contrasenia = :contrasenia")})
-public class Login implements Serializable {
+    @NamedQuery(name = "Intercambio.findAll", query = "SELECT i FROM Intercambio i")
+    , @NamedQuery(name = "Intercambio.findById", query = "SELECT i FROM Intercambio i WHERE i.id = :id")})
+public class Intercambio implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -39,28 +37,21 @@ public class Login implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 150)
-    @Column(name = "usuario")
-    private String usuario;
-    @Basic(optional = false)
-    @NotNull
-    @Size(min = 1, max = 150)
-    @Column(name = "contrasenia")
-    private String contrasenia;
+    @JoinColumn(name = "estado_intercambio_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private EstadoIntercambio estadoIntercambioId;
+    @JoinColumn(name = "libro_1_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Libro libro1Id;
+    @JoinColumn(name = "libro_2_id", referencedColumnName = "id")
+    @ManyToOne(optional = false)
+    private Libro libro2Id;
 
-    public Login() {
+    public Intercambio() {
     }
 
-    public Login(Integer id) {
+    public Intercambio(Integer id) {
         this.id = id;
-    }
-
-    public Login(Integer id, String usuario, String contrasenia) {
-        this.id = id;
-        this.usuario = usuario;
-        this.contrasenia = contrasenia;
     }
 
     public Integer getId() {
@@ -71,20 +62,28 @@ public class Login implements Serializable {
         this.id = id;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public EstadoIntercambio getEstadoIntercambioId() {
+        return estadoIntercambioId;
     }
 
-    public void setUsuario(String usuario) {
-        this.usuario = usuario;
+    public void setEstadoIntercambioId(EstadoIntercambio estadoIntercambioId) {
+        this.estadoIntercambioId = estadoIntercambioId;
     }
 
-    public String getContrasenia() {
-        return contrasenia;
+    public Libro getLibro1Id() {
+        return libro1Id;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setLibro1Id(Libro libro1Id) {
+        this.libro1Id = libro1Id;
+    }
+
+    public Libro getLibro2Id() {
+        return libro2Id;
+    }
+
+    public void setLibro2Id(Libro libro2Id) {
+        this.libro2Id = libro2Id;
     }
 
     @Override
@@ -97,10 +96,10 @@ public class Login implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Login)) {
+        if (!(object instanceof Intercambio)) {
             return false;
         }
-        Login other = (Login) object;
+        Intercambio other = (Intercambio) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -109,7 +108,7 @@ public class Login implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.Login[ id=" + id + " ]";
+        return "JPA.Intercambio[ id=" + id + " ]";
     }
     
 }

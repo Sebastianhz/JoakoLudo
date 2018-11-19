@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
 import javax.persistence.Basic;
@@ -24,12 +24,12 @@ import javax.xml.bind.annotation.XmlRootElement;
  * @author Pyther
  */
 @Entity
-@Table(name = "intercambio")
+@Table(name = "comentario")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Intercambio.findAll", query = "SELECT i FROM Intercambio i")
-    , @NamedQuery(name = "Intercambio.findById", query = "SELECT i FROM Intercambio i WHERE i.id = :id")})
-public class Intercambio implements Serializable {
+    @NamedQuery(name = "Comentario.findAll", query = "SELECT c FROM Comentario c")
+    , @NamedQuery(name = "Comentario.findById", query = "SELECT c FROM Comentario c WHERE c.id = :id")})
+public class Comentario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,20 +37,17 @@ public class Intercambio implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @JoinColumn(name = "estado_intercambio_id", referencedColumnName = "id")
+    @JoinColumn(name = "libro_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private EstadoIntercambio estadoIntercambioId;
-    @JoinColumn(name = "libro_1_id", referencedColumnName = "id")
+    private Libro libroId;
+    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
     @ManyToOne(optional = false)
-    private Libro libro1Id;
-    @JoinColumn(name = "libro_2_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Libro libro2Id;
+    private Usuario usuarioId;
 
-    public Intercambio() {
+    public Comentario() {
     }
 
-    public Intercambio(Integer id) {
+    public Comentario(Integer id) {
         this.id = id;
     }
 
@@ -62,28 +59,20 @@ public class Intercambio implements Serializable {
         this.id = id;
     }
 
-    public EstadoIntercambio getEstadoIntercambioId() {
-        return estadoIntercambioId;
+    public Libro getLibroId() {
+        return libroId;
     }
 
-    public void setEstadoIntercambioId(EstadoIntercambio estadoIntercambioId) {
-        this.estadoIntercambioId = estadoIntercambioId;
+    public void setLibroId(Libro libroId) {
+        this.libroId = libroId;
     }
 
-    public Libro getLibro1Id() {
-        return libro1Id;
+    public Usuario getUsuarioId() {
+        return usuarioId;
     }
 
-    public void setLibro1Id(Libro libro1Id) {
-        this.libro1Id = libro1Id;
-    }
-
-    public Libro getLibro2Id() {
-        return libro2Id;
-    }
-
-    public void setLibro2Id(Libro libro2Id) {
-        this.libro2Id = libro2Id;
+    public void setUsuarioId(Usuario usuarioId) {
+        this.usuarioId = usuarioId;
     }
 
     @Override
@@ -96,10 +85,10 @@ public class Intercambio implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Intercambio)) {
+        if (!(object instanceof Comentario)) {
             return false;
         }
-        Intercambio other = (Intercambio) object;
+        Comentario other = (Comentario) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -108,7 +97,7 @@ public class Intercambio implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.Intercambio[ id=" + id + " ]";
+        return "JPA.Comentario[ id=" + id + " ]";
     }
     
 }
