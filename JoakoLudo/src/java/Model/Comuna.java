@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -14,22 +16,25 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Pyther
  */
 @Entity
-@Table(name = "tipo_estado")
+@Table(name = "comuna")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "TipoEstado.findAll", query = "SELECT t FROM TipoEstado t")
-    , @NamedQuery(name = "TipoEstado.findById", query = "SELECT t FROM TipoEstado t WHERE t.id = :id")
-    , @NamedQuery(name = "TipoEstado.findByEstado", query = "SELECT t FROM TipoEstado t WHERE t.estado = :estado")})
-public class TipoEstado implements Serializable {
+    @NamedQuery(name = "Comuna.findAll", query = "SELECT c FROM Comuna c")
+    , @NamedQuery(name = "Comuna.findById", query = "SELECT c FROM Comuna c WHERE c.id = :id")
+    , @NamedQuery(name = "Comuna.findByNombre", query = "SELECT c FROM Comuna c WHERE c.nombre = :nombre")})
+public class Comuna implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -39,19 +44,22 @@ public class TipoEstado implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "estado")
-    private int estado;
+    @Size(min = 1, max = 50)
+    @Column(name = "nombre")
+    private String nombre;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "comunaId")
+    private Collection<Usuario> usuarioCollection;
 
-    public TipoEstado() {
+    public Comuna() {
     }
 
-    public TipoEstado(Integer id) {
+    public Comuna(Integer id) {
         this.id = id;
     }
 
-    public TipoEstado(Integer id, int estado) {
+    public Comuna(Integer id, String nombre) {
         this.id = id;
-        this.estado = estado;
+        this.nombre = nombre;
     }
 
     public Integer getId() {
@@ -62,12 +70,21 @@ public class TipoEstado implements Serializable {
         this.id = id;
     }
 
-    public int getEstado() {
-        return estado;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setEstado(int estado) {
-        this.estado = estado;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    @XmlTransient
+    public Collection<Usuario> getUsuarioCollection() {
+        return usuarioCollection;
+    }
+
+    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
+        this.usuarioCollection = usuarioCollection;
     }
 
     @Override
@@ -80,10 +97,10 @@ public class TipoEstado implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoEstado)) {
+        if (!(object instanceof Comuna)) {
             return false;
         }
-        TipoEstado other = (TipoEstado) object;
+        Comuna other = (Comuna) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -92,7 +109,7 @@ public class TipoEstado implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.TipoEstado[ id=" + id + " ]";
+        return "JPA.Comuna[ id=" + id + " ]";
     }
     
 }

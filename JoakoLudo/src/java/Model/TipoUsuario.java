@@ -3,33 +3,37 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
+import java.util.Collection;
 import javax.persistence.Basic;
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Pyther
  */
 @Entity
-@Table(name = "comentario")
+@Table(name = "tipo_usuario")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Comentario.findAll", query = "SELECT c FROM Comentario c")
-    , @NamedQuery(name = "Comentario.findById", query = "SELECT c FROM Comentario c WHERE c.id = :id")})
-public class Comentario implements Serializable {
+    @NamedQuery(name = "TipoUsuario.findAll", query = "SELECT t FROM TipoUsuario t")
+    , @NamedQuery(name = "TipoUsuario.findById", query = "SELECT t FROM TipoUsuario t WHERE t.id = :id")
+    , @NamedQuery(name = "TipoUsuario.findByDescripcion", query = "SELECT t FROM TipoUsuario t WHERE t.descripcion = :descripcion")})
+public class TipoUsuario implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -37,18 +41,23 @@ public class Comentario implements Serializable {
     @Basic(optional = false)
     @Column(name = "id")
     private Integer id;
-    @JoinColumn(name = "libro_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Libro libroId;
-    @JoinColumn(name = "usuario_id", referencedColumnName = "id")
-    @ManyToOne(optional = false)
-    private Usuario usuarioId;
+    @Basic(optional = false)
+    @NotNull
+    @Column(name = "descripcion")
+    private int descripcion;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoUsuarioId")
+    private Collection<Usuario> usuarioCollection;
 
-    public Comentario() {
+    public TipoUsuario() {
     }
 
-    public Comentario(Integer id) {
+    public TipoUsuario(Integer id) {
         this.id = id;
+    }
+
+    public TipoUsuario(Integer id, int descripcion) {
+        this.id = id;
+        this.descripcion = descripcion;
     }
 
     public Integer getId() {
@@ -59,20 +68,21 @@ public class Comentario implements Serializable {
         this.id = id;
     }
 
-    public Libro getLibroId() {
-        return libroId;
+    public int getDescripcion() {
+        return descripcion;
     }
 
-    public void setLibroId(Libro libroId) {
-        this.libroId = libroId;
+    public void setDescripcion(int descripcion) {
+        this.descripcion = descripcion;
     }
 
-    public Usuario getUsuarioId() {
-        return usuarioId;
+    @XmlTransient
+    public Collection<Usuario> getUsuarioCollection() {
+        return usuarioCollection;
     }
 
-    public void setUsuarioId(Usuario usuarioId) {
-        this.usuarioId = usuarioId;
+    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
+        this.usuarioCollection = usuarioCollection;
     }
 
     @Override
@@ -85,10 +95,10 @@ public class Comentario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Comentario)) {
+        if (!(object instanceof TipoUsuario)) {
             return false;
         }
-        Comentario other = (Comentario) object;
+        TipoUsuario other = (TipoUsuario) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -97,7 +107,7 @@ public class Comentario implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.Comentario[ id=" + id + " ]";
+        return "JPA.TipoUsuario[ id=" + id + " ]";
     }
     
 }

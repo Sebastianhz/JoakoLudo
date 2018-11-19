@@ -3,12 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
-import java.util.Collection;
 import javax.persistence.Basic;
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -16,24 +14,22 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 /**
  *
  * @author Pyther
  */
 @Entity
-@Table(name = "tipo_usuario")
+@Table(name = "tipo_estado")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "TipoUsuario.findAll", query = "SELECT t FROM TipoUsuario t")
-    , @NamedQuery(name = "TipoUsuario.findById", query = "SELECT t FROM TipoUsuario t WHERE t.id = :id")
-    , @NamedQuery(name = "TipoUsuario.findByDescripcion", query = "SELECT t FROM TipoUsuario t WHERE t.descripcion = :descripcion")})
-public class TipoUsuario implements Serializable {
+    @NamedQuery(name = "TipoEstado.findAll", query = "SELECT t FROM TipoEstado t")
+    , @NamedQuery(name = "TipoEstado.findById", query = "SELECT t FROM TipoEstado t WHERE t.id = :id")
+    , @NamedQuery(name = "TipoEstado.findByEstado", query = "SELECT t FROM TipoEstado t WHERE t.estado = :estado")})
+public class TipoEstado implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -43,21 +39,19 @@ public class TipoUsuario implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Column(name = "descripcion")
-    private int descripcion;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "tipoUsuarioId")
-    private Collection<Usuario> usuarioCollection;
+    @Column(name = "estado")
+    private int estado;
 
-    public TipoUsuario() {
+    public TipoEstado() {
     }
 
-    public TipoUsuario(Integer id) {
+    public TipoEstado(Integer id) {
         this.id = id;
     }
 
-    public TipoUsuario(Integer id, int descripcion) {
+    public TipoEstado(Integer id, int estado) {
         this.id = id;
-        this.descripcion = descripcion;
+        this.estado = estado;
     }
 
     public Integer getId() {
@@ -68,21 +62,12 @@ public class TipoUsuario implements Serializable {
         this.id = id;
     }
 
-    public int getDescripcion() {
-        return descripcion;
+    public int getEstado() {
+        return estado;
     }
 
-    public void setDescripcion(int descripcion) {
-        this.descripcion = descripcion;
-    }
-
-    @XmlTransient
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
-    }
-
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
+    public void setEstado(int estado) {
+        this.estado = estado;
     }
 
     @Override
@@ -95,10 +80,10 @@ public class TipoUsuario implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof TipoUsuario)) {
+        if (!(object instanceof TipoEstado)) {
             return false;
         }
-        TipoUsuario other = (TipoUsuario) object;
+        TipoEstado other = (TipoEstado) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -107,7 +92,7 @@ public class TipoUsuario implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.TipoUsuario[ id=" + id + " ]";
+        return "JPA.TipoEstado[ id=" + id + " ]";
     }
     
 }

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package data;
+package Model;
 
 import java.io.Serializable;
 import java.util.Collection;
@@ -28,13 +28,13 @@ import javax.xml.bind.annotation.XmlTransient;
  * @author Pyther
  */
 @Entity
-@Table(name = "comuna")
+@Table(name = "estado_intercambio")
 @XmlRootElement
 @NamedQueries({
-    @NamedQuery(name = "Comuna.findAll", query = "SELECT c FROM Comuna c")
-    , @NamedQuery(name = "Comuna.findById", query = "SELECT c FROM Comuna c WHERE c.id = :id")
-    , @NamedQuery(name = "Comuna.findByNombre", query = "SELECT c FROM Comuna c WHERE c.nombre = :nombre")})
-public class Comuna implements Serializable {
+    @NamedQuery(name = "EstadoIntercambio.findAll", query = "SELECT e FROM EstadoIntercambio e")
+    , @NamedQuery(name = "EstadoIntercambio.findById", query = "SELECT e FROM EstadoIntercambio e WHERE e.id = :id")
+    , @NamedQuery(name = "EstadoIntercambio.findByNombre", query = "SELECT e FROM EstadoIntercambio e WHERE e.nombre = :nombre")})
+public class EstadoIntercambio implements Serializable {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -44,20 +44,20 @@ public class Comuna implements Serializable {
     private Integer id;
     @Basic(optional = false)
     @NotNull
-    @Size(min = 1, max = 50)
+    @Size(min = 1, max = 200)
     @Column(name = "nombre")
     private String nombre;
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "comunaId")
-    private Collection<Usuario> usuarioCollection;
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "estadoIntercambioId")
+    private Collection<Intercambio> intercambioCollection;
 
-    public Comuna() {
+    public EstadoIntercambio() {
     }
 
-    public Comuna(Integer id) {
+    public EstadoIntercambio(Integer id) {
         this.id = id;
     }
 
-    public Comuna(Integer id, String nombre) {
+    public EstadoIntercambio(Integer id, String nombre) {
         this.id = id;
         this.nombre = nombre;
     }
@@ -79,12 +79,12 @@ public class Comuna implements Serializable {
     }
 
     @XmlTransient
-    public Collection<Usuario> getUsuarioCollection() {
-        return usuarioCollection;
+    public Collection<Intercambio> getIntercambioCollection() {
+        return intercambioCollection;
     }
 
-    public void setUsuarioCollection(Collection<Usuario> usuarioCollection) {
-        this.usuarioCollection = usuarioCollection;
+    public void setIntercambioCollection(Collection<Intercambio> intercambioCollection) {
+        this.intercambioCollection = intercambioCollection;
     }
 
     @Override
@@ -97,10 +97,10 @@ public class Comuna implements Serializable {
     @Override
     public boolean equals(Object object) {
         // TODO: Warning - this method won't work in the case the id fields are not set
-        if (!(object instanceof Comuna)) {
+        if (!(object instanceof EstadoIntercambio)) {
             return false;
         }
-        Comuna other = (Comuna) object;
+        EstadoIntercambio other = (EstadoIntercambio) object;
         if ((this.id == null && other.id != null) || (this.id != null && !this.id.equals(other.id))) {
             return false;
         }
@@ -109,7 +109,7 @@ public class Comuna implements Serializable {
 
     @Override
     public String toString() {
-        return "JPA.Comuna[ id=" + id + " ]";
+        return "JPA.EstadoIntercambio[ id=" + id + " ]";
     }
     
 }
