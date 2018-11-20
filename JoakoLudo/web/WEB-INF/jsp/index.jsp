@@ -76,19 +76,18 @@
 			</div>
 			<div class="row">
                             
-				<div class="col-md-6 col-sm-6">
+				<div class="col-md-4 col-sm-1">
                                     
-					<div >
+					<div class="intro">
 						<p>
-                                                        <a href="#" class="btn btn-primary btn-lg btn-hardbound">Iniciar sesion</a>
-							<a href="#" class="btn btn-primary btn-lg btn-hardbound">Registrate <span class="price">free</span></a> <span class="fh5co-block">
+							<a href="#" class="btn btn-primary btn-lg btn-hardbound">Iniciar session </a> <span class="fh5co-block">
 							</span>
-                                                        
-                                                        
+                                                        <a href="#" class="btn btn-primary btn-lg btn-hardbound">Registrate <span class="price">free</span></a> <span class="fh5co-block">
+							</span>
+                                                        <h2>Encuentra tus gustos</h2>
 						</p>
-                                          <h2>Encuentra tus gustos</h2>      
+                                                
 					</div>
-                                    
 				</div>
                            
 				<div class="col-md-6 col-sm-3">
@@ -204,6 +203,23 @@
 					
 				</div>
 	</header>
+
+	
+			</div>
+		</div>
+		
+		
+				<li><a href="#"><i class="icon-facebook"></i></a></li>
+						<li><a href="#"><i class="icon-twitter"></i></a></li>
+						<li><a href="#"><i class="icon-linkedin"></i></a></li>
+						<li><a href="#"><i class="icon-apple"></i></a></li>
+					</ul>
+		</div>
+			</div>
+		</footer>
+	</div>
+		
+	</div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
@@ -221,4 +237,5 @@
 
 	</body>
 </html>
+
 
