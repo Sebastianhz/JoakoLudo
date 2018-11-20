@@ -23,7 +23,7 @@
                 <prop key="index2.htm">index2Controller</prop>
                 <prop key="index3.htm">index3Controller</prop>
                 <prop key="login.htm">loginController</prop>
-                <prop key="registro_libro.htm">registro_libroController</prop>
+                <prop key="registro_libroo.htm">registro_librooController</prop>
                 <prop key="categoria.htm">categoriaController</prop>
                 <prop key="comuna.htm">comunaController</prop>
             </props>
@@ -52,9 +52,9 @@
 <bean name="loginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="login" />
-<bean name="registro_libroController"
+<bean name="registro_librooController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="registro_libro" />
+          p:viewName="registro_libroo" />
 <bean name="categoriaController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="categoria" />
