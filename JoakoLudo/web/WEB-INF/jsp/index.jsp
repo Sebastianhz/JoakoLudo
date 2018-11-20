@@ -82,9 +82,7 @@
 						<p>
                                                         <a href="#" class="btn btn-primary btn-lg btn-hardbound">Iniciar sesion</a>
 							<a href="#" class="btn btn-primary btn-lg btn-hardbound">Registrate <span class="price">free</span></a> <span class="fh5co-block">
-							</span>
-                                                        
-                                                        
+							</span>  
 						</p>
                                           <h2>Encuentra tus gustos</h2>      
 					</div>
