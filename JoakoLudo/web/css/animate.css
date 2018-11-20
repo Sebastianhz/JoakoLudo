@@ -7,7 +7,16 @@ Licensed under the MIT license - http://opensource.org/licenses/MIT
 Copyright (c) 2015 Daniel Eden
 */ 
 
+.header {
+    color: #36A0FF;
+    font-size: 27px;
+    padding: 10px;
+}
 
+.bigicon {
+    font-size: 35px;
+    color: #36A0FF;
+}
 .animated {
   -webkit-animation-duration: 1s;
   animation-duration: 1s;
