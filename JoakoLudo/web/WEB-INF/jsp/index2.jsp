@@ -141,7 +141,7 @@
             </div>
           </section>
 
-          <h2>Tus libros</h2>
+          <h2>Tus Gustos de libros</h2>
           <div class="table-responsive">
             <table class="table table-striped">
               <thead>
