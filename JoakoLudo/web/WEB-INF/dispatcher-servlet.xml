@@ -26,6 +26,7 @@
                 <prop key="registro_libroo.htm">registro_librooController</prop>
                 <prop key="categoria.htm">categoriaController</prop>
                 <prop key="comuna.htm">comunaController</prop>
+                <prop key="lista_libros.htm">lista_librosController</prop>
             </props>
           
             
@@ -61,4 +62,7 @@
 <bean name="comunaController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="comuna" />
+<bean name="lista_librosController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="lista_libros" />
 </beans>
