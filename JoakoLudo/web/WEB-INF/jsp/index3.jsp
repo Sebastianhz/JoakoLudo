@@ -70,8 +70,8 @@
   <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       
-      <a class="navbar-brand" href="#">Vivre-Book</a>
-      <a class="navbar-brand" href="#">Cerrar sesion</a>
+      <a class="navbar-brand" href="index3.htm">Vivre-Book</a>
+      <a class="navbar-brand" href="index.htm">Cerrar sesion</a>
 
  
     </nav>
@@ -81,18 +81,18 @@
         <nav class="col-sm-6 col-md-3 hidden-xs-down bg-faded sidebar">
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Ingresar libros</a>
+              <a class="nav-link" href="registro_l.htm">Ingresar libros</a>
             </li>
           </ul>
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-            <a class="nav-link" href="#">Ingresar comuna</a>
+            <a class="nav-link" href="comuna.htm">Ingresar comuna</a>
             </li>
           </ul>
 
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Ingresar Categoria</a>
+              <a class="nav-link" href="categoria_nuevo.htm">Ingresar Categoria</a>
             </li>
            
           </ul>

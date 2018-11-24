@@ -70,8 +70,8 @@
   <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       
-      <a class="navbar-brand" href="#">Vivre-Book</a>
-      <a class="navbar-brand" href="#">Cerrar sesion</a>
+      <a class="navbar-brand" href="index.htm">Vivre-Book</a>
+      <a class="navbar-brand" href="index.htm">Cerrar sesion</a>
 
  
     </nav>
@@ -81,7 +81,7 @@
         <nav class="col-sm-6 col-md-3 hidden-xs-down bg-faded sidebar">
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Mis libros</a>
+              <a class="nav-link" href="lista_libros.htm">Mis libros</a>
             </li>
           </ul>
           <ul class="nav nav-pills flex-column">
@@ -92,7 +92,7 @@
 
           <ul class="nav nav-pills flex-column">
             <li class="nav-item">
-              <a class="nav-link" href="#">Categorias</a>
+              <a class="nav-link" href="index2.htm">Categorias</a>
             </li>
            
           </ul>
