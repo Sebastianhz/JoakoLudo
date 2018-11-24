@@ -70,8 +70,8 @@
   <body>
     <nav class="navbar navbar-toggleable-md navbar-inverse fixed-top bg-inverse">
       
-      <a class="navbar-brand" href="#">Vivre-Book</a>
-      <a class="navbar-brand" href="#">Cerrar sesion</a>
+      <a class="navbar-brand" href="index3.htm">Vivre-Book</a>
+      <a class="navbar-brand" href="index.htm">Cerrar sesion</a>
 
  
     </nav>

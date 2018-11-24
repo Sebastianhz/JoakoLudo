@@ -80,9 +80,9 @@
                                     
 					<div class="intro">
 						<p>
-							<a href="#" class="btn btn-primary btn-lg btn-hardbound">Iniciar session </a> <span class="fh5co-block">
+							<a href="login.htm" class="btn btn-primary btn-lg btn-hardbound">Iniciar session </a> <span class="fh5co-block">
 							</span>
-                                                        <a href="#" class="btn btn-primary btn-lg btn-hardbound">Registrate <span class="price">free</span></a> <span class="fh5co-block">
+                                                        <a href="login.htm" class="btn btn-primary btn-lg btn-hardbound">Registrate <span class="price">free</span></a> <span class="fh5co-block">
 							</span>
                                                         <h2>Encuentra tus gustos</h2>
 						</p>

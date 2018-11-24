@@ -55,7 +55,7 @@
     <bean name="loginController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="login" />
-        <bean name="registro_librooController"
+    <bean name="registro_librooController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="registro_libroo" />
     <bean name="categoria_listarController"
