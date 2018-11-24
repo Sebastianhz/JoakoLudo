@@ -24,7 +24,8 @@
                 <prop key="index3.htm">index3Controller</prop>
                 <prop key="login.htm">loginController</prop>
                 <prop key="registro_libroo.htm">registro_librooController</prop>
-                <prop key="categoria.htm">categoriaController</prop>
+                <prop key="categoria_listar.htm">categoria_listarController</prop>
+                <prop key="categoria_nuevo.htm">categoria_nuevoController</prop>
                 <prop key="comuna.htm">comunaController</prop>
                 <prop key="registro_l.htm">registro_lController</prop>
                 <prop key="lista_libros.htm">lista_librosController</prop>
@@ -57,9 +58,12 @@
         <bean name="registro_librooController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="registro_libroo" />
-    <bean name="categoriaController"
+    <bean name="categoria_listarController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="categoria" />
+          p:viewName="categoria_listar" />
+    <bean name="categoria_nuevoController"
+          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
+          p:viewName="categoria_nuevo" />
     <bean name="comunaController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="comuna" />
