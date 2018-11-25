@@ -13,30 +13,12 @@
 	<meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
 	<meta name="author" content="FreeHTML5.co" />
 
-  <!-- 
-	//////////////////////////////////////////////////////
-
-	FREE HTML5 TEMPLATE 
-	DESIGNED & DEVELOPED by FreeHTML5.co
-		
-	Website: 		http://freehtml5.co/
-	Email: 			info@freehtml5.co
-	Twitter: 		http://twitter.com/fh5co
-	Facebook: 		https://www.facebook.com/fh5co
-
-	//////////////////////////////////////////////////////
-	 -->
-
-  	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
 	<meta property="og:site_name" content=""/>
 	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+
 
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
@@ -93,10 +75,6 @@
 				<div class="col-md-6 col-sm-3">
                                    
 					<figure class="fh5co-intro-img">
-                                           
-					<!-- Modernizr JS 	<img class="img-1 animate-box" src="images/book_black.png" alt="Free Website Template by FreeHTML5.co">-->
-					<!-- Modernizr JS 	<img class="img-2 animate-box" src="images/book_white.png"i alt="Free Website Template by FreeHTML5.co">-->
-					
                                         </figure>
 				</div>
 			</div>
@@ -202,24 +180,9 @@
 					</div>
 					
 				</div>
+                            </div>
+                    </div>
 	</header>
-
-	
-			</div>
-		</div>
-		
-		
-				<li><a href="#"><i class="icon-facebook"></i></a></li>
-						<li><a href="#"><i class="icon-twitter"></i></a></li>
-						<li><a href="#"><i class="icon-linkedin"></i></a></li>
-						<li><a href="#"><i class="icon-apple"></i></a></li>
-					</ul>
-		</div>
-			</div>
-		</footer>
-	</div>
-		
-	</div>
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
