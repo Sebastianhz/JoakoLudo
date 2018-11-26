@@ -28,18 +28,23 @@
 
 	//////////////////////////////////////////////////////
 	 -->
+         <style> 
+         .slider{
+            background: url(images/bg-person_1.jpg);
+            height: 30 vh;
+            background-size: cover;
+            background-position: center
+          }
 
+         
+         </style> 
   	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content=""/>
 	<meta property="og:image" content=""/>
 	<meta property="og:url" content=""/>
 	<meta property="og:site_name" content=""/>
 	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
+	
 	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 	<link rel="shortcut icon" href="favicon.ico">
 	<!-- <link href='https://fonts.googleapis.com/css?family=Varela+Round' rel='stylesheet' type='text/css'> -->
@@ -51,6 +56,8 @@
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
 	<link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css">
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
 
@@ -64,7 +71,7 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-
+       
 	</head>
 
   <body>
@@ -75,7 +82,7 @@
 
  
     </nav>
-
+      
     <div class="container-fluid">
       <div class="row">
         <nav class="col-sm-6 col-md-3 hidden-xs-down bg-faded sidebar">
@@ -117,29 +124,11 @@
         <main class="col-sm-9 offset-sm-3 col-md-9 offset-md-2 pt-3">
           <h1  class="cursive-font"><a >Libro--Guia</a></h1>
           
-
-          <section class="row text-center placeholders">
-            <div class="col-5 col-sm-3 placeholder">
-              <img src="images/person_1.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Nombre libro</h4>
-              <div class="text-muted">Usuario</div>
-            </div>
-            <div class="col-5 col-sm-3 placeholder">
-              <img src="images/person_2.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Nombre libro</h4>
-              <span class="text-muted">Usuario</span>
-            </div>
-            <div class="col-5 col-sm-3 placeholder">
-              <img src="images/person_3.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Nombre libro</h4>
-              <span class="text-muted">Usuario</span>
-            </div>
-            <div class="col-5 col-sm-3 placeholder">
-              <img src="images/person_1.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
-              <h4>Nombre libro</h4>
-              <span class="text-muted">Usuario</span>
-            </div>
-          </section>
+       
+          <section>
+        
+              </section>
+           
 
           <h2>Tus Gustos de libros</h2>
           <div class="table-responsive">
@@ -170,7 +159,19 @@
         </main>
       </div>
     </div>
-
+   <!--     
+<div class="col-5 col-sm-3 placeholder">
+              <img src="images/person_1.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail">
+              <h4>Nombre libro</h4>
+              <div class="text-muted">Usuario</div>
+            </div>
+   <div class="item active">
+			<img src="images/person_1.jpg" width="200" height="200" class="img-fluid rounded-circle" alt="Generic placeholder thumbnail"/>
+			<div class="carousel-caption">
+			</div>
+                        
+		  </div>
+   -->
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
