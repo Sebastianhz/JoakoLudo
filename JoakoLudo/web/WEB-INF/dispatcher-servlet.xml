@@ -8,6 +8,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+    <mvc:annotation-driven/>
+    <tx:annotation-driven/>
+    <context:componet-scan base-package="Model"/>
+    <context:componet-scan base-package="controladores"/>
+    <context:componet-scan base-package="DAO"/>
+
+
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
@@ -35,6 +42,7 @@
             
         </property>
     </bean>
+
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
