@@ -12,7 +12,7 @@
     <tx:annotation-driven/>
     <context:componet-scan base-package="Model"/>
     <context:componet-scan base-package="controladores"/>
-    <context:componet-scan base-package="DAO"/>
+    
 
 
 
