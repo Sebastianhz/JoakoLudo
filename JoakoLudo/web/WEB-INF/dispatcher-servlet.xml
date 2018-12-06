@@ -8,13 +8,6 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
-    <mvc:annotation-driven/>
-    <tx:annotation-driven/>
-    <context:componet-scan base-package="Model"/>
-    <context:componet-scan base-package="controladores"/>
-    <context:componet-scan base-package="DAO"/>
-
-
 
     <bean class="org.springframework.web.servlet.mvc.support.ControllerClassNameHandlerMapping"/>
 
@@ -28,21 +21,9 @@
             <props>
                 <prop key="index.htm">indexController</prop>
                 <prop key="index2.htm">index2Controller</prop>
-                <prop key="index3.htm">index3Controller</prop>
-                <prop key="login.htm">loginController</prop>
-                <prop key="registro_libroo.htm">registro_librooController</prop>
-                <prop key="categoria_listar.htm">categoria_listarController</prop>
-                <prop key="categoria_nuevo.htm">categoria_nuevoController</prop>
-                <prop key="comuna.htm">comunaController</prop>
-                <prop key="registro_l.htm">registro_lController</prop>
-                <prop key="lista_libros.htm">lista_librosController</prop>
-                <prop key="formulario.htm">formularioController</prop>
             </props>
-          
-            
         </property>
     </bean>
-
 
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -52,37 +33,11 @@
     <!--
     The index controller.
     -->
-    <bean name="index3Controller"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index3" />
-    <bean name="index2Controller"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="index2" />
     <bean name="indexController"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
           p:viewName="index" />
-    <bean name="loginController"
+    <bean name="index2Controller"
           class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="login" />
-    <bean name="registro_librooController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="registro_libroo" />
-    <bean name="categoria_listarController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="categoria_listar" />
-    <bean name="categoria_nuevoController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="categoria_nuevo" />
-    <bean name="comunaController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="comuna" />
-    <bean name="registro_lController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="registro_l" />
-    <bean name="lista_librosController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="lista_libros" />
-       <bean name="formularioController"
-          class="org.springframework.web.servlet.mvc.ParameterizableViewController"
-          p:viewName="formulario" />
-    </beans>
+          p:viewName="index2" />
+
+</beans>
